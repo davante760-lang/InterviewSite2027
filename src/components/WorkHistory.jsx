@@ -3,6 +3,13 @@ import { motion } from 'framer-motion'
 
 const companies = [
   {
+    name: 'Netradyne',
+    logo: '/logo-netradyne.png',
+    logoStyle: { width: 180, maxWidth: 'none', height: 36, objectFit: 'cover', mixBlendMode: 'lighten' },
+    // Keep this entry compact until the updated resume supplies the role details.
+    compact: true,
+  },
+  {
     name: 'Samsara',
     logo: '/logo-samsara.png',
     invertLogo: true,
@@ -47,14 +54,14 @@ export default function WorkHistory() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {companies.map((company, i) => (
-            <FadeIn key={company.name} delay={i * 0.1}>
+            <FadeIn key={company.name} delay={i * 0.1} className={company.compact ? 'md:col-span-3' : ''}>
               <motion.div
                 className="bg-surface-1 border border-border rounded-xl p-5 flex flex-col h-full"
                 whileHover={{ y: -2 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
                 {/* Logo */}
-                <div className="h-10 mb-4 flex items-center">
+                <div className={`h-10 flex items-center ${company.compact ? '' : 'mb-4'}`}>
                   <img
                     src={company.logo}
                     alt={company.name}
@@ -64,16 +71,20 @@ export default function WorkHistory() {
                 </div>
 
                 {/* Role */}
-                <h3 className="font-heading text-[15px] font-semibold text-text-primary tracking-[-0.01em] mb-4">
-                  {company.role}
-                </h3>
+                {company.role && (
+                  <h3 className="font-heading text-[15px] font-semibold text-text-primary tracking-[-0.01em] mb-4">
+                    {company.role}
+                  </h3>
+                )}
 
                 {/* Takeaway */}
-                <div className="mt-auto pt-4 border-t border-border-light">
-                  <p className="text-[13px] italic text-text-tertiary leading-[1.65]">
-                    "{company.takeaway}"
-                  </p>
-                </div>
+                {company.takeaway && (
+                  <div className="mt-auto pt-4 border-t border-border-light">
+                    <p className="text-[13px] italic text-text-tertiary leading-[1.65]">
+                      "{company.takeaway}"
+                    </p>
+                  </div>
+                )}
               </motion.div>
             </FadeIn>
           ))}
