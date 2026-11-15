@@ -12,7 +12,7 @@ test('serves site assets and health without exposing repository files', async (t
   const home = await fetch(origin);
   assert.equal(home.status, 200);
   assert.match(await home.text(), /Dave Alexander/);
-  for (const [path, type] of [['/app.js','text/javascript'], ['/content.js','text/javascript'], ['/style.css','text/css'], ['/favicon.svg','image/svg+xml']]) {
+  for (const [path, type] of [['/app.js','text/javascript'], ['/content.js','text/javascript'], ['/style.css','text/css'], ['/favicon.svg','image/svg+xml'], ['/fonts/Geist-Variable.woff2','font/woff2'], ['/images/family.jpg','image/jpeg'], ['/images/samsara.png','image/png'], ['/images/applied.png','image/png'], ['/images/ezlynx.png','image/png']]) {
     const response = await fetch(origin + path);
     assert.equal(response.status, 200);
     assert.ok(response.headers.get('content-type').includes(type));

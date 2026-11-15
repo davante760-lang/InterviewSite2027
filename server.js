@@ -9,6 +9,11 @@ const assets = new Map([
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/content.js', ['content.js', 'text/javascript; charset=utf-8']],
   ['/favicon.svg', ['favicon.svg', 'image/svg+xml']],
+  ['/fonts/Geist-Variable.woff2', ['fonts/Geist-Variable.woff2', 'font/woff2']],
+  ['/images/family.jpg', ['images/family.jpg', 'image/jpeg']],
+  ['/images/samsara.png', ['images/samsara.png', 'image/png']],
+  ['/images/applied.png', ['images/applied.png', 'image/png']],
+  ['/images/ezlynx.png', ['images/ezlynx.png', 'image/png']],
 ]);
 
 export function createSiteServer() {

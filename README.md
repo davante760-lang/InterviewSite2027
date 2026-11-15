@@ -1,6 +1,6 @@
 # Dave Alexander — Enterprise Sales
 
-An interviewer-facing portfolio organized around seven enterprise sales pillars. An editorial overview leads into an interactive seven-pillar guide, five detailed case studies, outcome and discipline filters, an About page, and email/LinkedIn contact links. Case studies offer a 30-second brief followed by the context, turning point, decisions, and reflection. Responsive, keyboard accessible, and dependency-free at runtime.
+A concise, interviewer-facing portfolio in the original dark visual style. One page covers experience, selected deals, seven sales principles, and a short personal introduction. Five optional story dialogs explain the challenge, contribution, outcome, and takeaway. Responsive, keyboard accessible, and dependency-free at runtime.
 
 ## Run locally
 
@@ -21,12 +21,12 @@ To retain an existing Railway domain, change the source repository on that exist
 ## Content and navigation
 
 - `public/content.js`: seven disciplines, five stories, source-qualified metrics, and contact details.
-- `public/app.js`: page rendering, accessible interactions, routing, and filters.
+- `public/app.js`: page rendering, accessible story dialogs, mobile navigation, and hash routing.
 - `public/style.css`: responsive styles.
 - `public/index.html`: navigation, metadata, and footer.
 - `server.js`: static asset server and health endpoint.
 
-Pages use shareable hash routes such as `/#/pillars/discovery` and `/#/stories/odom`. Story sections support deep links such as `/#/stories/odom?section=outcome`. Legacy story URLs still resolve. The case library separates closed wins, a team deal study, and closed-loss reflections. Fonts load from Google Fonts with local fallbacks. There are no analytics, trackers, forms, authentication, or private interview pages.
+Section anchors include `/#experience`, `/#deals`, and `/#how-i-sell`. Story dialogs have shareable links such as `/#/stories/odom`; legacy story aliases and pillar routes still resolve. Stories distinguish closed wins, a team case study, and closed-loss reflections. The Geist font, company logos, and family photo are served locally from the original site assets. There are no analytics, trackers, forms, authentication, or private interview pages.
 
 ## Editorial status
 

@@ -3,34 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f5f3ed">
-  <meta name="description" content="Dave Alexander's enterprise sales portfolio. Explore seven sales disciplines, complex deal decisions, and lessons from wins and losses.">
-  <title>Dave Alexander — Enterprise Sales</title>
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="Meet Dave Alexander. Enterprise sales experience, a straightforward sales approach, and selected deal stories.">
+  <meta property="og:title" content="Dave Alexander | Enterprise Sales">
+  <meta property="og:description" content="Experience, approach, and the stories behind the deals.">
+  <meta property="og:type" content="website">
+  <title>Dave Alexander | Enterprise Sales</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;650;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="wordmark" href="#/" aria-label="Dave Alexander, home"><span class="brand-mark" aria-hidden="true">d<span>.</span>a</span><span>Dave Alexander<small>ENTERPRISE SALES</small></span></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">＋</span></button>
-    <nav id="main-nav" aria-label="Main navigation">
-      <a data-nav="pillars" href="#/pillars">The approach</a>
-      <a data-nav="stories" href="#/stories">Selected work</a>
-      <a data-nav="about" href="#/about">About Dave</a>
-      <a class="nav-contact" href="mailto:alexanderdave619@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    <nav class="nav-pill" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Dave Alexander, home"><span class="brand-mark" aria-hidden="true"></span>Dave Alexander</a>
+      <div class="nav-links"><a href="#experience">Experience</a><a href="#deals">Deal stories</a><a href="#how-i-sell">How I sell</a></div>
+      <a class="nav-cta" href="mailto:alexanderdave619@gmail.com?subject=Resume%20request">Request resume <span aria-hidden="true">→</span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false"><span></span><span></span></button>
     </nav>
+    <nav id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#experience">Experience</a><a href="#deals">Deal stories</a><a href="#how-i-sell">How I sell</a><a href="#about">About Dave</a></nav>
   </header>
   <main id="main" tabindex="-1"></main>
-  <footer class="site-footer">
-    <div class="footer-top"><a class="footer-name" href="#/">Dave Alexander<span>↗</span></a><p>Enterprise sales.<br>Thoughtful process. Accountable execution.</p></div>
-    <div class="footer-bottom"><span>© 2026 Dave Alexander</span><div><a href="mailto:alexanderdave619@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/davealexander760" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:alexanderdave619@gmail.com?subject=Resume%20request">Request resume ↗</a></div><a href="#/pillars">Seven disciplines. One owner.</a></div>
-  </footer>
+  <footer class="footer wrap"><span>© 2026 Dave Alexander</span><div><a href="mailto:alexanderdave619@gmail.com">Email</a><a href="https://www.linkedin.com/in/davealexander760" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></footer>
+  <dialog id="story-dialog" aria-labelledby="story-title"><div class="dialog-content"></div></dialog>
   <div id="announcement" class="sr-only" aria-live="polite"></div>
   <script type="module" src="/app.js"></script>
-  <noscript><div class="noscript"><h1>Dave Alexander — Enterprise Sales</h1><p>This portfolio uses JavaScript to display the sales approach and deal studies. You can also <a href="mailto:alexanderdave619@gmail.com">contact Dave by email</a> or visit <a href="https://www.linkedin.com/in/davealexander760">LinkedIn</a>.</p></div></noscript>
+  <noscript><section class="wrap no-script"><h1>Dave Alexander</h1><p>Enterprise sales experience across operational SaaS and insurance technology.</p><p>Enable JavaScript to explore the deal stories, or <a href="mailto:alexanderdave619@gmail.com">email Dave</a>.</p></section></noscript>
 </body>
 </html>
