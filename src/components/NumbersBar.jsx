@@ -31,12 +31,12 @@ const numbers = [
     decimals: 0,
   },
   {
-    value: '8 Years',
+    value: '8+ Years',
     label: 'Market Tenure',
     context: 'Across insurtech, operational SaaS, and fleet IoT',
     prefix: '',
     number: 8,
-    suffix: ' Years',
+    suffix: '+ Years',
     decimals: 0,
   },
 ]

@@ -1,10 +1,10 @@
 import { FadeIn, SectionTitle } from './AnimatedSection'
 
 const rows = [
-  ['FY23', 'ramp', '65%', '85%', '118%', '136%', '101%'],
-  ['FY24', 'year 2', '100%', '108%', '122%', '134%', '116%'],
-  ['FY25', 'year 3', '105%', '110%', '118%', '147%', '120%'],
-  ['FY26', 'in progress', '108%', '98%', '103% fcst', '103% fcst', '103% pace'],
+  ['FY23', 'Samsara · ramp', '65%', '85%', '118%', '136%', '101%'],
+  ['FY24', 'Samsara', '100%', '108%', '122%', '134%', '116%'],
+  ['FY25', 'Samsara', '105%', '110%', '118%', '147%', '120%'],
+  ['2026', 'Netradyne', '—', '—', '105%', '208%', '91%'],
 ]
 
 export default function QuarterlyAttainment() {
@@ -12,15 +12,15 @@ export default function QuarterlyAttainment() {
     <section id="attainment" className="py-24 md:py-28 px-6">
       <div className="max-w-[860px] mx-auto">
         <FadeIn>
-          <SectionTitle eyebrow="PERFORMANCE DETAIL" title="Quarterly Attainment by FY" />
+          <SectionTitle eyebrow="PERFORMANCE DETAIL" title="Quarterly Attainment" />
         </FadeIn>
         <FadeIn delay={0.1}>
           <div className="overflow-x-auto rounded-xl border border-border bg-surface-1" tabIndex="0">
             <table className="w-full min-w-[700px] border-collapse text-[13px]">
-              <caption className="sr-only">Quarterly quota attainment from fiscal year 2023 through fiscal year 2026</caption>
+              <caption className="sr-only">Quarterly quota attainment at Samsara for FY23 through FY25 and Netradyne for 2026</caption>
               <thead>
                 <tr className="bg-surface-3 text-text-primary">
-                  {['FY', 'Q1', 'Q2', 'Q3', 'Q4', 'Full year'].map((heading, index) => (
+                  {['Period', 'Q1', 'Q2', 'Q3', 'Q4', 'Annual quota'].map((heading, index) => (
                     <th key={heading} scope="col" className={`px-4 py-3.5 font-medium border-b border-border ${index === 0 ? 'text-left' : 'text-center'}`}>{heading}</th>
                   ))}
                 </tr>
@@ -38,6 +38,10 @@ export default function QuarterlyAttainment() {
               </tbody>
             </table>
           </div>
+          <p className="text-[12px] text-text-tertiary leading-relaxed mt-3">
+            Netradyne: 170% of first-year ramp quota; 91% of the full $1.27M annual quota.
+            Quarterly figures use the full $317,500 quota. — = not reported.
+          </p>
         </FadeIn>
       </div>
     </section>

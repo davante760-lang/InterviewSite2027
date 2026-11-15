@@ -3,7 +3,7 @@ import { FadeIn, SectionTitle } from './AnimatedSection'
 const items = [
   {
     title: 'Trigger-Based Prospecting',
-    body: 'At Samsara I tier a book of 150 to 250 accounts down to what I actually work every week. The signals I chase are the ones that mean the buyer is already thinking about change. New operations or fleet leadership. Facility expansions. M&A. Safety incidents. Insurance premium spikes. DOT and compliance events. I lead with what changed in their business, not a product pitch. Same discipline transfers to any territory.',
+    body: 'At Samsara I tiered a book of 150 to 250 accounts down to what I actually worked every week. The signals I chase are the ones that mean the buyer is already thinking about change. New operations or fleet leadership. Facility expansions. M&A. Safety incidents. Insurance premium spikes. DOT and compliance events. I lead with what changed in their business, not a product pitch. Same discipline transfers to any territory.',
   },
   {
     title: 'Multi-Threading',

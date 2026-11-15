@@ -6,16 +6,17 @@ const companies = [
     name: 'Netradyne',
     logo: '/logo-netradyne.png',
     logoStyle: { width: 180, maxWidth: 'none', height: 36, objectFit: 'cover', mixBlendMode: 'lighten' },
-    // Keep this entry compact until the updated resume supplies the role details.
-    compact: true,
+    role: 'Enterprise Account Executive (Jan 2026 to Present)',
+    takeaway:
+      'Closed $1.16M in ARR across seven net-new wins in 2026: 170% of first-year ramp quota and 91% of the full $1.27M annual quota. Averaged $165K ARR per win, including a $332K ARR competitive displacement across 657 vehicles. Built executive ROI cases and led buying teams through pilots, security reviews, procurement, and negotiations.',
   },
   {
     name: 'Samsara',
     logo: '/logo-samsara.png',
     invertLogo: true,
-    role: 'Account Executive, Mid-Market (Feb 2023 to Present)',
+    role: 'Account Executive, Mid-Market (Feb 2023 to Jan 2026)',
     takeaway:
-      '118% avg attainment against a $900K quota across FY24 and FY25, currently pacing 103% in FY26. Grew average deal size to $84K through multi-product attach and executive-aligned business cases. $4 to $5M in qualified pipeline annually, ~55% self-sourced. $250K competitive displacement. Two-time President\u2019s Club, top 10% of the Mid-Market sales org.',
+      '118% avg attainment against a $900K quota across FY24 and FY25. Grew average deal size to $84K through multi-product attach and executive-aligned business cases. $4 to $5M in qualified pipeline annually, ~55% self-sourced. $250K competitive displacement. Two-time President\u2019s Club, top 10% of the Mid-Market sales org.',
   },
   {
     name: 'Applied Systems',
@@ -52,16 +53,16 @@ export default function WorkHistory() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {companies.map((company, i) => (
-            <FadeIn key={company.name} delay={i * 0.1} className={company.compact ? 'md:col-span-3' : ''}>
+            <FadeIn key={company.name} delay={i * 0.1}>
               <motion.div
                 className="bg-surface-1 border border-border rounded-xl p-5 flex flex-col h-full"
                 whileHover={{ y: -2 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
                 {/* Logo */}
-                <div className={`h-10 flex items-center ${company.compact ? '' : 'mb-4'}`}>
+                <div className="h-10 mb-4 flex items-center">
                   <img
                     src={company.logo}
                     alt={company.name}

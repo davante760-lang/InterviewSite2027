@@ -7,7 +7,7 @@ const reasons = [
   },
   {
     title: 'A Sale That Fits How I Win',
-    body: 'Selling a maintenance transformation looks a lot like the deals I close at Samsara. Diagnose how the operation actually runs today. Quantify what downtime and inefficient work is costing them. Get operations and technical stakeholders on the same page. Then earn the exec check. Same motion, different buyer.',
+    body: 'Selling a maintenance transformation looks a lot like the deals I closed at Samsara. Diagnose how the operation actually runs today. Quantify what downtime and inefficient work is costing them. Get operations and technical stakeholders on the same page. Then earn the exec check. Same motion, different buyer.',
   },
   {
     title: 'Real Ownership',

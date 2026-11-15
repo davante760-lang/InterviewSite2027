@@ -34,10 +34,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-text-secondary text-[14.5px] leading-[1.75] max-w-[620px] mx-auto"
         >
-          Eight years in B2B SaaS. Currently at Samsara, where I've hit President's Club two years
-          running on 118% average attainment. I turned a $900K quota into $4 to 5M of pipeline a
-          year, closed a $250K displacement, and grew my average deal size to $84K by attaching
-          multi-product wins to real executive business cases. The deals I close have one thing in
+          Eight-plus years in B2B SaaS. Currently an Enterprise Account Executive at Netradyne,
+          where I've closed $1.16M in ARR across seven net-new wins. Previously at Samsara, I earned
+          President's Club twice on 118% average attainment. The deals I close have one thing in
           common. I don't sell features. I sell what happens if nothing changes.
         </motion.p>
       </div>
