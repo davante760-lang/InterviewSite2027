@@ -20,6 +20,7 @@ const companies = [
   {
     name: 'EZLynx',
     logo: '/logo-ezlynx.png',
+    logoStyle: { width: 140, objectFit: 'cover', mixBlendMode: 'lighten' },
     role: 'BDR to SMB AE (Nov 2017 to Jun 2021)',
     takeaway:
       'Built outbound discipline from the ground up. As BDR: $400K+ qualified pipeline in a single quarter, ~25% connect-to-meeting lift, ~20% lead-to-opp lift after rolling out a lead scoring framework. Promoted to SMB AE and closed the largest full-suite AMS replacement on the SMB team that year ($42K).',
@@ -58,7 +59,7 @@ export default function WorkHistory() {
                     src={company.logo}
                     alt={company.name}
                     className="h-8 max-w-[140px] object-contain"
-                    style={company.invertLogo ? { filter: 'brightness(0) invert(1)' } : undefined}
+                    style={company.invertLogo ? { filter: 'brightness(0) invert(1)' } : company.logoStyle}
                   />
                 </div>
 
