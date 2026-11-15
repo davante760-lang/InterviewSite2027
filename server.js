@@ -18,8 +18,13 @@ function collectAssets(directory = '') {
 }
 collectAssets();
 assets.set('/', assets.get('/index.html'));
-assets.set('/deals/odom', assets.get('/deals/odom/index.html'));
-assets.set('/deals/odom/', assets.get('/deals/odom/index.html'));
+for (const [path, asset] of [...assets]) {
+  if (/^\/deals\/[^/]+\/index\.html$/.test(path)) {
+    const route = path.slice(0, -'/index.html'.length);
+    assets.set(route, asset);
+    assets.set(route + '/', asset);
+  }
+}
 
 export function createSiteServer() {
   return createServer(async (request, response) => {

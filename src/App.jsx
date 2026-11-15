@@ -12,7 +12,9 @@ import WhatYoullGet from './components/WhatYoullGet'
 import AboutDave from './components/AboutDave'
 import ResumeDownload from './components/ResumeDownload'
 import Footer from './components/Footer'
-import OdomStory from './components/OdomStory'
+import DealStory from './components/DealStory'
+import { dealCards } from './data/dealCards'
+import { dealStories } from './data/dealStories'
 import { SectionDivider } from './components/AnimatedSection'
 
 export default function App() {
@@ -23,8 +25,10 @@ export default function App() {
     }
   }, [])
 
-  if (/^\/deals\/odom(?:\/|\/index\.html)?$/.test(window.location.pathname)) {
-    return <OdomStory />
+  const slug = window.location.pathname.match(/^\/deals\/([^/]+)(?:\/|\/index\.html)?$/)?.[1]
+  const dealIndex = dealCards.findIndex(deal => deal.slug === slug)
+  if (dealIndex >= 0 && dealStories[slug]) {
+    return <DealStory deal={dealCards[dealIndex]} story={dealStories[slug]} nextDeal={dealCards[(dealIndex + 1) % dealCards.length]} />
   }
 
   return (
