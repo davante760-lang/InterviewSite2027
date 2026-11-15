@@ -5,6 +5,7 @@ RUN npm ci --no-audit --no-fund
 COPY index.html vite.config.js ./
 COPY src ./src
 COPY public ./public
+COPY deals ./deals
 RUN npm run build
 
 FROM node:22-alpine

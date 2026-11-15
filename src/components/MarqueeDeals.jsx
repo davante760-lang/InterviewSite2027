@@ -31,6 +31,7 @@ const deals = [
   },
   {
     name: 'The Odom Corporation',
+    href: '/deals/odom/',
     industry: 'Beverage distribution · 657 vehicles',
     value: '$331.9K',
     valueLabel: 'ARR',
@@ -120,12 +121,16 @@ function DealSection({ id, title, description, deals, className = 'py-24 md:py-2
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {deals.map((deal, index) => (
+          {deals.map((deal, index) => {
+            const Card = deal.href ? motion.a : motion.article
+            return (
             <FadeIn key={deal.name} delay={0.1 + index * 0.08}>
-              <motion.article
+              <Card
+                href={deal.href}
+                aria-label={deal.href ? `Read ${deal.name} deal story` : undefined}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="bg-surface-1 border border-border rounded-xl p-5 h-full flex flex-col"
+                className={`bg-surface-1 border border-border rounded-xl p-5 h-full flex flex-col ${deal.href ? 'group hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 transition-colors' : ''}`}
               >
                 <div className="h-[126px] rounded-lg bg-surface-2 border border-border-light flex items-center justify-center px-4 mb-5 overflow-hidden">
                   {deal.logo ? (
@@ -158,9 +163,16 @@ function DealSection({ id, title, description, deals, className = 'py-24 md:py-2
                     </span>
                   </div>
                 </div>
-              </motion.article>
+                {deal.href && (
+                  <span className="mt-4 flex items-center justify-between text-[12px] font-medium text-accent">
+                    Read deal story
+                    <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform">→</span>
+                  </span>
+                )}
+              </Card>
             </FadeIn>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

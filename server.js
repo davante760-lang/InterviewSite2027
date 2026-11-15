@@ -18,6 +18,8 @@ function collectAssets(directory = '') {
 }
 collectAssets();
 assets.set('/', assets.get('/index.html'));
+assets.set('/deals/odom', assets.get('/deals/odom/index.html'));
+assets.set('/deals/odom/', assets.get('/deals/odom/index.html'));
 
 export function createSiteServer() {
   return createServer(async (request, response) => {
