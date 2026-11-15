@@ -7,7 +7,7 @@ const navLinks = [
   { id: 'experience',     label: 'Experience' },
   { id: 'why-limble',     label: 'Why Limble' },
   { id: 'how-i-sell',     label: 'How I sell' },
-  { id: 'marquee-deals', label: 'Deal story' },
+  { id: 'marquee-deals', label: 'Deals' },
 ]
 
 // Accent for logo square + CTA. Hardcoded cobalt here as the first
