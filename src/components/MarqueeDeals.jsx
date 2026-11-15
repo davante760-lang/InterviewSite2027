@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { FadeIn, SectionTitle } from './AnimatedSection'
 
-const samsaraDeals = [
+const deals = [
   {
     name: 'JDE Concrete',
     industry: 'Concrete & construction operations',
@@ -29,9 +29,6 @@ const samsaraDeals = [
     logoClass: 'max-h-[98px] max-w-[210px]',
     tag: 'Self-sourced',
   },
-]
-
-const netradyneDeals = [
   {
     name: 'The Odom Corporation',
     industry: 'Beverage distribution · 657 vehicles',
@@ -168,20 +165,11 @@ function DealSection({ id, title, description, deals, className = 'py-24 md:py-2
 
 export default function MarqueeDeals() {
   return (
-    <>
-      <DealSection
-        id="marquee-deals"
-        title="Samsara Deals"
-        description="Three self-sourced wins across construction, emergency services, and food distribution."
-        deals={samsaraDeals}
-      />
-      <DealSection
-        id="netradyne-deals"
-        title="Netradyne Deals"
-        description="Seven wins across transportation, distribution, energy, and building products. Values shown are annual recurring revenue."
-        deals={netradyneDeals}
-        className="pb-24 md:pb-28 px-6"
-      />
-    </>
+    <DealSection
+      id="marquee-deals"
+      title="Deals"
+      description="Selected wins across transportation, distribution, construction, and industrial operations."
+      deals={deals}
+    />
   )
 }
