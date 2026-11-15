@@ -1,20 +1,23 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
+import { readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-const assets = new Map([
-  ['/', ['index.html', 'text/html; charset=utf-8']],
-  ['/index.html', ['index.html', 'text/html; charset=utf-8']],
-  ['/style.css', ['style.css', 'text/css; charset=utf-8']],
-  ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
-  ['/content.js', ['content.js', 'text/javascript; charset=utf-8']],
-  ['/favicon.svg', ['favicon.svg', 'image/svg+xml']],
-  ['/fonts/Geist-Variable.woff2', ['fonts/Geist-Variable.woff2', 'font/woff2']],
-  ['/images/family.jpg', ['images/family.jpg', 'image/jpeg']],
-  ['/images/samsara.png', ['images/samsara.png', 'image/png']],
-  ['/images/applied.png', ['images/applied.png', 'image/png']],
-  ['/images/ezlynx.png', ['images/ezlynx.png', 'image/png']],
-]);
+const types = {
+  html: 'text/html; charset=utf-8', js: 'text/javascript; charset=utf-8',
+  css: 'text/css; charset=utf-8', svg: 'image/svg+xml', png: 'image/png',
+  jpg: 'image/jpeg', webp: 'image/webp', woff2: 'font/woff2', pdf: 'application/pdf',
+};
+const assets = new Map();
+function collectAssets(directory = '') {
+  for (const entry of readdirSync(new URL(`./dist/${directory}`, import.meta.url), { withFileTypes: true })) {
+    const name = directory + entry.name;
+    if (entry.isDirectory()) collectAssets(name + '/');
+    else if (entry.isFile()) assets.set('/' + name, [name, types[name.split('.').pop()] || 'application/octet-stream']);
+  }
+}
+collectAssets();
+assets.set('/', assets.get('/index.html'));
 
 export function createSiteServer() {
   return createServer(async (request, response) => {
@@ -41,7 +44,7 @@ export function createSiteServer() {
       return;
     }
     try {
-      const data = await readFile(new URL(`./public/${asset[0]}`, import.meta.url));
+      const data = await readFile(new URL(`./dist/${asset[0]}`, import.meta.url));
       response.writeHead(200, {
         'Content-Type': asset[1],
         'Content-Length': data.length,

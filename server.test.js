@@ -11,8 +11,17 @@ test('serves site assets and health without exposing repository files', async (t
   const origin = `http://127.0.0.1:${server.address().port}`;
   const home = await fetch(origin);
   assert.equal(home.status, 200);
-  assert.match(await home.text(), /Dave Alexander/);
-  for (const [path, type] of [['/app.js','text/javascript'], ['/content.js','text/javascript'], ['/style.css','text/css'], ['/favicon.svg','image/svg+xml'], ['/fonts/Geist-Variable.woff2','font/woff2'], ['/images/family.jpg','image/jpeg'], ['/images/samsara.png','image/png'], ['/images/applied.png','image/png'], ['/images/ezlynx.png','image/png']]) {
+  const html = await home.text();
+  assert.match(html, /Dave Alexander/);
+  const bundlePaths = [...html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)].map(match => match[1]);
+  assert.ok(bundlePaths.some(path => path.endsWith('.js')));
+  assert.ok(bundlePaths.some(path => path.endsWith('.css')));
+  for (const [path, type] of [
+    ...bundlePaths.map(path => [path, path.endsWith('.js') ? 'text/javascript' : 'text/css']),
+    ['/fonts/Geist-Variable.woff2','font/woff2'], ['/family.jpg','image/jpeg'],
+    ['/logo-samsara.png','image/png'], ['/logo-applied.png','image/png'], ['/logo-ezlynx.png','image/png'],
+    ['/DaveAlexanderResume.pdf','application/pdf'], ['/excelsior-ambulance.webp','image/webp'],
+  ]) {
     const response = await fetch(origin + path);
     assert.equal(response.status, 200);
     assert.ok(response.headers.get('content-type').includes(type));
