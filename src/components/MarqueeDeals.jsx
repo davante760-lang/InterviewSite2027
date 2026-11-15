@@ -67,6 +67,10 @@ const deals = [
     valueLabel: 'ARR',
     cycle: '337-day opportunity cycle',
     tag: 'First camera deployment',
+    logo: '/deal-logos/miami-yellow-cab.png',
+    logoAlt: 'Yellow Cab 965 logo',
+    logoClass: 'max-h-[112px] max-w-full',
+    logoStyle: { clipPath: 'circle(43% at 50% 50%)' },
   },
   {
     name: 'Kodiak Building Partners',
